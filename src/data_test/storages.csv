@@ -1,0 +1,4 @@
+id,Node,Technology,Fuel,Power,Efficiency,Emission,VariableCost,Storage
+Limmern,IR,Pumped storage,Hydro,30,1,0,0,50
+Grimsel,DE,Pumped storage,Hydro,0,1,0,0,0
+Rheinfelden,CR,Pumped storage,Hydro,0,1,0,0,0

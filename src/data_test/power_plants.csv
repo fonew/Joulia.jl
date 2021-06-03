@@ -1,0 +1,4 @@
+ID,Node,Technology,Fuel,Capacity,Efficiency,Emission,VariableCost,Storage
+Ali,IR,Gas turbine,NaturalGas,80,1,0,40,0
+Hector,CR,Gas turbine,NaturalGas,40,1,0,80,0
+Ingmar,DE,Gas turbine,NaturalGas,0,1,0,10000,0

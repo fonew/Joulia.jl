@@ -15,14 +15,14 @@ Pkg.add("DataFrames")
 Pkg.add("CSV")
 Pkg.add("JuMP")
 Pkg.add("ProgressMeter")
-#Pkg.add(Pkg.PackageSpec(name = "Gurobi", version = v"0.8"))
-Pkg.add("Clp")
+Pkg.add(Pkg.PackageSpec(name = "Gurobi", version = v"0.8"))
+#Pkg.add("Clp")
 #end
 
 using DataFrames
 using CSV
-#using Gurobi
-using Clp
+using Gurobi
+#using Clp
 
 
 
@@ -64,7 +64,6 @@ elmod = JouliaModel(pp, res, storages, nodes, lines)
 slices = week_slices(49)
 
 # running the Joulia model for week 30 using the Gurobi solver
-#results = run_model(elmod, slices[30], solver=Clp())
 results = run_model(elmod, slices[30], solver=GurobiSolver())
 
 

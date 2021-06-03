@@ -6,19 +6,25 @@
 # Example: ELMOD-DE
 
 #using Joulia
+include("src/Joulia.jl")
 
 #Run this only once to set up packages
 using Pkg
 Pkg.activate(pwd())
 Pkg.add("DataFrames")
 Pkg.add("CSV")
+Pkg.add("JuMP")
 Pkg.add("ProgressMeter")
-Pkg.add("Gurobi")
+#Pkg.add(Pkg.PackageSpec(name = "Gurobi", version = v"0.8"))
+Pkg.add("Clp")
 #end
-using DataFrames, CSV
-using Gurobi
 
-include(Joulia.jl)
+using DataFrames
+using CSV
+#using Gurobi
+using Clp
+
+
 
 # data load for 2015 sample data
 # see http://doi.org/10.5281/zenodo.1044463
@@ -58,6 +64,7 @@ elmod = JouliaModel(pp, res, storages, nodes, lines)
 slices = week_slices(49)
 
 # running the Joulia model for week 30 using the Gurobi solver
+#results = run_model(elmod, slices[30], solver=Clp())
 results = run_model(elmod, slices[30], solver=GurobiSolver())
 
 
